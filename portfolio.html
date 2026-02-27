@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Estudos do Vini · Portfólio</title>
+    <!-- Fonte moderna e leve -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300..700&display=swap" rel="stylesheet">
+    <!-- Reset e estilos globais simplificados, completamente responsivos -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background-color: #0f0f12;        /* fundo mais escuro e sofisticado */
+            color: #e3e3e8;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            color: #a2f0c2;
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+
+        a:hover {
+            color: #d0ffdd;
+            text-decoration: underline;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Container responsivo */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        /* Header */
+        .site-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            padding: 1.2rem 0;
+            border-bottom: 1px solid #2a2a30;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .brand-logo {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            object-fit: cover;
+            background: #2a2a30;
+        }
+
+        .site-title {
+            font-size: 1.6rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: white;
+        }
+
+        /* hero simplificado */
+        .hero-cover {
+            width: 100%;
+            max-height: 200px;
+            object-fit: cover;
+            border-radius: 20px;
+            margin: 2rem 0 0.5rem;
+            box-shadow: 0 10px 20px -8px rgba(0,0,0,0.5);
+        }
+
+        /* Títulos */
+        h2 {
+            font-size: clamp(1.5rem, 4vw, 2.2rem);
+            font-weight: 500;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+            color: #f0f0f5;
+        }
+
+        .subhead {
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #a0a0b0;
+            margin-bottom: 0.5rem;
+        }
+
+        .section-title {
+            text-align: center;
+            margin: 3rem 0 2rem;
+        }
+
+        /* cards de projeto — responsivo e clean */
+        .project-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 3.5rem;
+            margin: 3rem 0;
+        }
+
+        .project-card {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            background: #18181c;
+            border-radius: 32px;
+            padding: 2rem;
+            align-items: center;
+            border: 1px solid #2c2c34;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .project-card:hover {
+            box-shadow: 0 20px 30px -10px #00000066;
+            border-color: #3e4a4a;
+        }
+
+        .project-image {
+            flex: 1 1 200px;
+            min-width: 160px;
+            max-width: 260px;
+            margin: 0 auto;
+        }
+
+        .project-image img {
+            border-radius: 24px;
+            background: #26262e;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            width: 100%;
+            box-shadow: 0 12px 25px -10px black;
+        }
+
+        .project-info {
+            flex: 3 1 300px;
+        }
+
+        .project-info h3 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            color: white;
+        }
+
+        .project-tag {
+            display: inline-block;
+            background: #2c4735;
+            color: #b7f0c5;
+            font-size: 0.8rem;
+            font-weight: 600;
+            padding: 0.25rem 1rem;
+            border-radius: 30px;
+            margin: 0.5rem 0 0.8rem;
+        }
+
+        .project-description {
+            color: #b5b5c0;
+            margin: 0.8rem 0 1.2rem;
+            max-width: 550px;
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            align-items: center;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            background: #2a2a32;
+            color: #dbdbee;
+            padding: 0.6rem 1.4rem;
+            border-radius: 40px;
+            font-weight: 500;
+            font-size: 0.95rem;
+            border: 1px solid #3a3a45;
+            transition: 0.15s;
+        }
+
+        .btn-primary {
+            background: #2f6e4a;
+            border-color: #3fa86b;
+            color: white;
+        }
+
+        .btn-primary:hover {
+            background: #3b8a5b;
+            color: white;
+            text-decoration: none;
+        }
+
+        .btn-outline:hover {
+            background: #2f2f38;
+            text-decoration: none;
+        }
+
+        .btn i { font-style: normal; font-size: 1.2rem; }
+
+        .separator {
+            width: 120px;
+            height: 2px;
+            background: #2f6e4a;
+            margin: 2rem auto;
+            border: none;
+        }
+
+        /* bloco de contato / bio */
+        .bio-contact {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2.5rem;
+            background: #18181c;
+            border-radius: 40px;
+            padding: 3rem 2.5rem;
+            margin: 3rem 0;
+            border: 1px solid #2d2d36;
+        }
+
+        .bio-card h4 {
+            font-size: 1.4rem;
+            font-weight: 500;
+            margin-bottom: 1.25rem;
+            color: white;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item a {
+            color: #c6e6d0;
+            word-break: break-all;
+        }
+
+        .whatsapp-float {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0 3rem;
+        }
+
+        .whatsapp-block {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            background: #1f3b2c;
+            padding: 1.2rem 2.5rem;
+            border-radius: 80px;
+            border: 1px solid #3e9e62;
+            font-size: 1.3rem;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .whatsapp-block:hover {
+            background: #235f39;
+            text-decoration: none;
+            border-color: #72ca94;
+        }
+
+        .whatsapp-block img {
+            width: 36px;
+            height: 36px;
+        }
+
+        /* depoimento/testemunho */
+        .testimonial {
+            text-align: center;
+            font-size: 1.5rem;
+            line-height: 1.5;
+            max-width: 800px;
+            margin: 4rem auto 2rem;
+            color: #ddddee;
+            font-style: italic;
+            border-left: 4px solid #2f6e4a;
+            padding-left: 2rem;
+        }
+
+        .testimonial-author {
+            font-size: 1rem;
+            color: #a0a0b0;
+            margin-top: 1rem;
+            font-style: normal;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem 0 3rem;
+            color: #7a7a8a;
+            font-size: 0.9rem;
+            border-top: 1px solid #23232a;
+        }
+
+        /* responsividade fina */
+        @media (max-width: 640px) {
+            .project-card {
+                flex-direction: column;
+                text-align: center;
+                padding: 1.8rem;
+            }
+            .project-info h3 {
+                font-size: 1.6rem;
+            }
+            .btn-group {
+                justify-content: center;
+            }
+            .bio-contact {
+                padding: 2rem 1.5rem;
+            }
+            .whatsapp-block {
+                padding: 1rem 1.5rem;
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .site-header {
+                flex-direction: column;
+                align-items: start;
+            }
+        }
+
+        /* remove estranhices do layout antigo */
+        .wp-block-cover, .wp-block-group, .entry-content {
+            all: unset;
+            display: block;
+        }
+        /* esconde scripts de admin (opcional) */
+        #wpadminbar, .actnbr-* { display: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER -->
+        <header class="site-header">
+            <div class="brand">
+                <img class="brand-logo" src="https://estudosdovini.wordpress.com/wp-content/uploads/2025/01/cropped-img_6748.jpg?w=64" alt="Vini" width="48" height="48" loading="lazy">
+                <span class="site-title">Estudos do Vini</span>
+            </div>
+            <!-- futuramente menu simplificado -->
+        </header>
+
+        <!-- BANNER (imagem cover) -->
+        <img class="hero-cover" src="banner2.jpg" alt="capa desenvolvimento" loading="lazy">
+
+        <!-- Introdução -->
+        <div style="text-align: center; margin: 3rem 0 1rem;">
+            <div class="subhead">desenvolvedor fullstack</div>
+            <h2 style="font-weight: 500; max-width: 700px; margin-left: auto; margin-right: auto;">Vinícius Silva — transformo ideias em produtos digitais bonitos e funcionais</h2>
+        </div>
+
+        <hr class="separator">
+
+        <!-- PORTFÓLIO - PROJETOS -->
+        <h2 class="section-title">📁 Trabalhos recentes</h2>
+
+        <div class="project-grid">
+
+            <!-- 1. Lara Taróloga -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://estudosdovini.wordpress.com/wp-content/uploads/2025/04/lara.jpg" alt="Lara Taróloga" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <h3>Lara Taróloga</h3>
+                    <span class="project-tag">site institucional</span>
+                    <p class="project-description">Site de espiritualidade desenvolvido para cliente, com design acolhedor e presença digital completa.</p>
+                    <div class="btn-group">
+                        <a href="https://ovinisilv.github.io/lara-tarologa/" target="_blank" class="btn btn-primary" rel="noopener">🔗 Acessar site</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 2. Leitor Facial -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://estudosdovini.wordpress.com/wp-content/uploads/2025/07/weebcam1.png" alt="Reconhecimento Facial" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <h3>Leitor de Reconhecimento Facial</h3>
+                    <span class="project-tag">API / visão computacional</span>
+                    <p class="project-description">Sistema de identificação facial integrado ao sistema do cliente, rápido e preciso.</p>
+                    <div class="btn-group">
+                        <a href="https://ovinisilv.github.io/reconhecimento-facial/" target="_blank" class="btn btn-primary" rel="noopener">🔗 Demonstração</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Entrega Aí (delivery) -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://estudosdovini.wordpress.com/wp-content/uploads/2025/08/logo.png" alt="Entrega Aí" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <h3>Entrega Aí · App Delivery</h3>
+                    <span class="project-tag">android / food delivery</span>
+                    <p class="project-description">Aplicativo completo inspirado no iFood: cliente, motoboy, restaurante e superadmin. Totalmente funcional.</p>
+                    <div class="btn-group">
+                        <a href="https://estudosdovini.wordpress.com/wp-content/uploads/2025/08/entrega-ai-v2-final.zip" class="btn btn-outline" download>📦 Baixar APK (zip)</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 4. Sino Eletrônico -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="eletronic-2.png" alt="ElectronicChurchBell" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <h3>Sino Eletrônico para Paróquias</h3>
+                    <span class="project-tag">android · ElectronicChurchBell</span>
+                    <p class="project-description">Aplicativo que toca sinos programados, ideal para igrejas e capelas.</p>
+                    <div class="btn-group">
+                        <a href="https://estudosdovini.wordpress.com/wp-content/uploads/2025/02/electronichurchbell.zip" class="btn btn-outline" download>📦 Baixar (.zip)</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 5. Snake Money -->
+            <div class="project-card">
+                <div class="project-image">
+                    <img src="https://estudosdovini.wordpress.com/wp-content/uploads/2025/07/snake-3.png" alt="Snake Money" loading="lazy">
+                </div>
+                <div class="project-info">
+                    <h3>Snake Money</h3>
+                    <span class="project-tag">jogo android</span>
+                    <p class="project-description">Versão do clássico jogo da cobra com sistema de recompensas e dinheiro real.</p>
+                    <div class="btn-group">
+                        <a href="https://estudosdovini.wordpress.com/wp-content/uploads/2025/06/snakegame.zip" class="btn btn-outline" download>📦 Baixar APK</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Depoimento / frase do Vini -->
+        <div class="testimonial">
+            “Minha paixão é entregar sites, aplicativos e soluções bonitos e funcionais, satisfazendo da melhor forma o interesse de meus clientes.”
+            <div class="testimonial-author">— Vinicius Silva de Barros</div>
+        </div>
+
+        <!-- WHATSAPP -->
+        <div class="whatsapp-float">
+            <a href="https://api.whatsapp.com/send/?phone=5555999931122&text=Ol%C3%A1%2C+gostaria+de+conhecer+melhor+seus+servi%C3%A7os+de+Desenvolvimento" target="_blank" class="whatsapp-block" rel="noopener">
+                <img src="https://estudosdovini.wordpress.com/wp-content/uploads/2025/07/pngwing.com_.png" alt="WhatsApp" width="36" height="36" loading="lazy">
+                <span>Vamos conversar · WhatsApp</span>
+            </a>
+        </div>
+
+        <!-- BIO + CONTATO (2 colunas) -->
+        <div class="bio-contact">
+            <div class="bio-card">
+                <h4>🧑‍💻 sobre</h4>
+                <p>Vinícius Silva, 22 anos, estudante de Ciências da Computação na Universidade Federal do Pampa (Alegrete). Desenvolvedor com foco em soluções criativas e experiência do usuário.</p>
+            </div>
+            <div class="bio-card">
+                <h4>📬 contato</h4>
+                <div class="contact-item">
+                    <span>📧</span> <a href="mailto:sbarros.vinicius@gmail.com">sbarros.vinicius@gmail.com</a>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span> <a href="tel:+5555999931122">55 9 9993-1122</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- rodapé -->
+        <footer>
+            <p>© 2025 Vinícius Silva — todos os direitos reservados.</p>
+        </footer>
+    </div>
+
+    <!-- esconde barra de admin legada (apenas visual) -->
+    <style>
+        #wpadminbar, #actionbar, .actnbr-*, .admin-bar, .widget_eu_cookie_law_widget, .jetpack-subscribe-modal {
+            display: none !important;
+        }
+        html { margin-top: 0 !important; }
+    </style>
+</body>
+</html>
